@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = 'pratikshamudagl/exp5'
-        DOCKER_CREDENTIALS = 'dockerhub_credentials'
+        DOCKER_CREDENTIALS = 'Dockerfile-credentials'
     }
 
     stages {
@@ -32,7 +32,7 @@ pipeline {
             steps {
                 withCredentials([
                     usernamePassword(
-                        credentialsId: 'dockerhub_credentials',
+                        credentialsId: 'Dockerfile-credentials',
                         usernameVariable: 'DOCKER_USER',
                         passwordVariable: 'DOCKER_PASS'
                     )
