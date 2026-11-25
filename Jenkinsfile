@@ -17,7 +17,7 @@
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/your-username/MyApplication.git'
+                    url: 'https://github.com/pratiksha-R-mudagal/exp5.git'
             }
         }
 
