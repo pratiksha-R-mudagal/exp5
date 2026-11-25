@@ -1,10 +1,4 @@
-
-
-
-
-                       credentialsId: 'dockerhub_credentials',
-                        usernameVariable: 'DOCKER_USER',
-                        passwordVariable: 'pipeline {
+pipeline {
     agent any
 
     environment {
@@ -17,7 +11,7 @@
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/pratiksha-R-mudagal/exp5.git'
+                    url: 'https://github.com/your-username/MyApplication.git'
             }
         }
 
@@ -37,7 +31,10 @@
         stage('Push Docker Image') {
             steps {
                 withCredentials([
-                    usernamePassword(DOCKER_PASS'
+                    usernamePassword(
+                        credentialsId: 'dockerhub_credentials',
+                        usernameVariable: 'DOCKER_USER',
+                        passwordVariable: 'DOCKER_PASS'
                     )
                 ]) {
                     bat 'docker login -u %DOCKER_USER% -p %DOCKER_PASS%'
@@ -58,4 +55,3 @@
         }
     }
 }
-
