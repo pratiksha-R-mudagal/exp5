@@ -2,14 +2,14 @@
 
 
 
-                       credentialsId: 'dockerhub-credentials',
+                       credentialsId: 'dockerhub_credentials',
                         usernameVariable: 'DOCKER_USER',
                         passwordVariable: 'pipeline {
     agent any
 
     environment {
         DOCKER_IMAGE = 'pratikshamudagl/exp5'
-        DOCKER_CREDENTIALS = 'dockerhub-credentials'
+        DOCKER_CREDENTIALS = 'dockerhub_credentials'
     }
 
     stages {
